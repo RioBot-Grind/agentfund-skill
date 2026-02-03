@@ -14,18 +14,10 @@ Use this skill when:
 
 ### Check Platform Stats
 ```bash
-curl -s "https://mainnet.base.org" -X POST \
-  -H "Content-Type: application/json" \
-  -d '{"jsonrpc":"2.0","method":"eth_call","params":[{"to":"0x6a4420f696c9ba6997f41dddc15b938b54aa009a","data":"0x6ada7847"},"latest"],"id":1}' | jq -r '.result' | xargs printf "%d\n"
+bash scripts/get-stats.sh
 ```
 
 ### Create Fundraise Proposal
-
-To fundraise, you need:
-1. Your wallet address (where funds go)
-2. Milestone amounts in ETH
-
-Generate proposal with the helper script:
 ```bash
 bash scripts/create-proposal.sh <your-wallet> <milestone1-eth> <milestone2-eth> ...
 ```
@@ -33,6 +25,21 @@ bash scripts/create-proposal.sh <your-wallet> <milestone1-eth> <milestone2-eth> 
 ### Check Project Status
 ```bash
 bash scripts/check-project.sh <project-id>
+```
+
+### Find Your Projects
+```bash
+bash scripts/find-my-projects.sh <your-wallet-address>
+```
+
+### Request Milestone Release
+```bash
+bash scripts/request-release.sh <project-id> <milestone-index>
+```
+
+### Fund a Project
+```bash
+bash scripts/fund-project.sh <project-id> <amount-eth>
 ```
 
 ## Contract Details
@@ -60,10 +67,12 @@ bash scripts/check-project.sh <project-id>
 | `check-project.sh` | Check project status |
 | `find-my-projects.sh` | Find projects where you're the agent |
 | `request-release.sh` | Generate release request |
+| `get-stats.sh` | Get platform statistics |
+| `fund-project.sh` | Generate funding transaction |
 
 ## MCP Server
 
-For full MCP integration: https://github.com/RioBot-Grind/agentfund-mcp
+For full MCP integration with Claude/Cursor: https://github.com/RioTheGreat-ai/agentfund-mcp
 
 ## Example Workflow
 
@@ -86,6 +95,6 @@ your project will be created on AgentFund!
 
 ## Links
 
-- **MCP Server**: https://github.com/RioBot-Grind/agentfund-mcp
-- **Smart Contract**: https://github.com/RioBot-Grind/agentfund-escrow
+- **MCP Server**: https://github.com/RioTheGreat-ai/agentfund-mcp
+- **Smart Contract**: https://github.com/RioTheGreat-ai/agentfund-escrow
 - **BaseScan**: https://basescan.org/address/0x6a4420f696c9ba6997f41dddc15b938b54aa009a
