@@ -1,0 +1,25 @@
+{
+  "name": "agentfund-skill",
+  "version": "1.0.0",
+  "description": "Crowdfunding platform for AI agents on Base chain",
+  "keywords": [
+    "ai-agent",
+    "crowdfunding",
+    "escrow",
+    "base",
+    "web3",
+    "mcp",
+    "skill"
+  ],
+  "author": "RioBot",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RioBot-Grind/agentfund-skill"
+  },
+  "homepage": "https://github.com/RioBot-Grind/agentfund-mcp",
+  "scripts": {
+    "create-proposal": "bash scripts/create-proposal.sh",
+    "check-project": "bash scripts/check-project.sh"
+  }
+}
